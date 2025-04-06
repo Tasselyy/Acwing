@@ -1,0 +1,76 @@
+// 2024.3.31
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include <cstring>
+#include <queue>
+#include <unordered_map>
+#define INF 0x3f3f3f3f
+#define ffor(i, a, b) for (int i = (a); i < (b); ++i)
+#define efor(i, a, b) for (int i = (a); i <= (b); ++i)
+using namespace std;
+typedef pair<int, int> PII;
+
+const int N = 1010;
+int n;
+int e[N], ne[N], w[N], h[N], idx;
+bool st[N];
+int dst[N];
+
+void add(int a, int b, int c)
+{
+    e[idx] = b, w[idx] = c, ne[idx] = h[a], h[a] = idx++;
+}
+
+void dijstra()
+{
+    memset(dst, 0x3f, sizeof dst);
+    priority_queue<PII, vector<PII>, greater<PII>> heap;
+    heap.push({0, 1});
+    dst[1] = 0;
+    while (heap.size())
+    {
+        PII t = heap.top();
+        heap.pop();
+        int node = t.second, d = t.first;
+        st[node] = true;
+        for (int i = h[node]; i != -1; i = ne[i])
+        {
+            int j = e[i];
+            if (dst[j] > d + w[i])
+            {
+                dst[j] = d + w[i];
+                if (!st[j])
+                {
+                    heap.push({dst[j], j});
+                }
+            }
+        }
+    }
+}
+
+int main()
+{
+    memset(h, -1, sizeof h);
+    int n, m;
+    cin >> n >> m;
+    while (m--)
+    {
+        int a, b, c;
+        cin >> a >> b >> c;
+        add(a, b, c);
+        add(b, a, c);
+    }
+    dijstra();
+    int ans = 0;
+    efor(i, 1, n)
+    {
+        if (dst[i] == INF)
+        {
+            cout << -1;
+            return 0;
+        }
+        ans = max(ans, dst[i]);
+    }
+    cout << ans;
+}
