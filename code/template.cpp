@@ -1,4 +1,4 @@
-// 2024.4.5
+// 2024.4.6
 #include <iostream>
 #include <algorithm>
 #include <vector>
@@ -16,7 +16,4 @@ int n;
 
 int main()
 {
-    int a;
-    cin >> a;
-    cout << a;
 }

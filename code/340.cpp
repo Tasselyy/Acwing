@@ -1,4 +1,4 @@
-// 2024.3.31
+// 2024.4.6
 #include <iostream>
 #include <algorithm>
 #include <vector>
@@ -11,21 +11,10 @@
 using namespace std;
 typedef pair<int, int> PII;
 
-const int N = 1e5 + 10;
-int n, m;
-int e[N], ne[N], w[N], h[N], idx;
-int dst[N];
-bool st[N];
-int cnt[N];
-
-void add(int a, int b, int c)
-{
-    e[idx] = b, w[idx] = c, ne[idx] = h[a], h[a] = idx++;
-}
-
-
+const int N = 55, M = 1;
+int n;
 
 int main()
 {
-    cout<<1e5;
+    
 }
