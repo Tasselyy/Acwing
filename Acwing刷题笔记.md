@@ -4,6 +4,8 @@
 
 340：最短路+二分答案
 
+342： 
+
 # 搜索
 
 ## BFS
@@ -113,6 +115,10 @@ void add(int a, int b, int c)
 ### 1135
 
 先dijstra预处理6个点，再dfs枚举搜索顺序
+
+### 341
+
+![image-20250408011544246](C:\Users\18268\AppData\Roaming\Typora\typora-user-images\image-20250408011544246.png)
 
 
 
