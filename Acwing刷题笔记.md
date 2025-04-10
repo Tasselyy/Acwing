@@ -120,6 +120,51 @@ void add(int a, int b, int c)
 
 ![image-20250408011544246](C:\Users\18268\AppData\Roaming\Typora\typora-user-images\image-20250408011544246.png)
 
+## 单源最短路扩展
+
+### 1137
+
+反向建图/虚拟源点
+
+## Floyd
+
+### 1125
+
+求：连上这条路径后，所有牧场（生成的新牧场和原有牧场）中**直径最大的牧场的直径尽可能小。**
+
+1. 先floyd预处理出任意两点间最短路
+
+2. 求出直径最大的牧场的直径
+
+假设连边之后的牧场的直径最大， 最大直径为：
+
+```
+maxd[i] + maxd[j] + get_d(q[i], q[j])
+```
+
+3. 再求出这个直径的最小值
+
+```
+ r2 = min(r2, maxd[i] + maxd[j] + get_d(q[i], q[j]))
+```
+
+但最大直径也可能是没连边之前，各个连通块内直径最大值
+
+```
+maxd[i] = max(maxd[i], d[i][j]);
+r1 = max(r1, maxd[i]);
+```
+
+为了确保答案是最大直径
+
+```
+ans = max(r1,r2)
+```
+
+### 343
+
+![image-20250410000803023](C:\Users\18268\AppData\Roaming\Typora\typora-user-images\image-20250410000803023.png)
+
 
 
 # DONE
