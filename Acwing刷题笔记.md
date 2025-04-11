@@ -6,6 +6,16 @@
 
 342： 
 
+# Summary
+
+Time complexity:
+
+![image-20250411010957786](C:\Users\18268\AppData\Roaming\Typora\typora-user-images\image-20250411010957786.png)
+
+![image-20250411011123416](C:\Users\18268\AppData\Roaming\Typora\typora-user-images\image-20250411011123416.png)
+
+
+
 # 搜索
 
 ## BFS
